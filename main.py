@@ -1,40 +1,17 @@
-from fastapi import FastAPI
-import schedule
-import time
 import threading
+from fastapi import FastAPI
 from scenery import Scenery
-
-
-class GetDataJob(object):
-
-    def __init__(self, message="I'm working...", seconds=10):
-        self.schedule = schedule
-        self.message = message
-        self.seconds = seconds
-
-    def job(self):
-        print(self.message)
-
-    def runJob(self):
-        self.schedule.every(self.seconds).seconds.do(self.job)
-        while True:
-            self.schedule.run_pending()
-            time.sleep(1)
-
+from consume_covid19_api_job import ConsumeCovid19Api
 
 app = FastAPI()
 
 
 @app.on_event("startup")
 async def startup_event():
-    imWorkingJob = GetDataJob(seconds=2)
-    imWorkingJobThread = threading.Thread(
-        target=imWorkingJob.runJob, args=())
-    imWorkingJobThread.start()
-    imStillWorkingJob = GetDataJob(message="I'm still working...", seconds=3)
-    imStillWorkingJobThread = threading.Thread(
-        target=imStillWorkingJob.runJob, args=())
-    imStillWorkingJobThread.start()
+    consume_api = ConsumeCovid19Api()
+    consume_api_thread = threading.Thread(
+        target=consume_api.run_scheduled_job, args=())
+    consume_api_thread.start()
 
 
 @app.get("/")

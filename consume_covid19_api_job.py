@@ -26,10 +26,10 @@ class ConsumeCovid19Api(object):
 
     def run_scheduled_job(self):
         print_next_consume()
-        self.schedule.every(24).hours.do(self.job)
+        self.schedule.every(4).hours.do(self.job)
         while True:
             self.schedule.run_pending()
-            time.sleep(24 * 60 * 60)
+            time.sleep(4 * 60 * 60)
 
     def job(self):
         print(f'Start Covid-19 API consuming at {datetime.today()}')

@@ -16,7 +16,7 @@ from insert_df_on_datatable import insert_df_on_datatable
 
 def print_next_consume():
     print(
-        f'Schedule next api consuming to {datetime.today() + timedelta(hours=24)}')
+        f'Schedule next api consuming to {datetime.today() + timedelta(hours=4)}')
 
 
 class ConsumeCovid19Api(object):

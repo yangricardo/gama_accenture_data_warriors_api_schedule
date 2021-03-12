@@ -1,6 +1,7 @@
 import datetime
 import request_url
 import time
+import json
 
 
 def request_data_by_country(country_name, from_date="2020-01-01T00:00:00Z", cases=["confirmed", "deaths"]):

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import schedule
 import time
 import threading
+from scenery import Scenery
 
 
 class GetDataJob(object):
@@ -38,4 +39,13 @@ async def startup_event():
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    import json
+    scenery = Scenery()
+    sceneries = []
+    sceneries.append(scenery.daily_cases())
+    sceneries.append(scenery.daily_deaths())
+    sceneries.append(scenery.total_cases())
+    sceneries.append(scenery.total_deaths())
+    sceneries = list(
+        map(lambda s: {'title': s[0], 'data': json.loads(s[1].to_json(orient='records'))}, sceneries))
+    return sceneries

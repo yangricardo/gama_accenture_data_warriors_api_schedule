@@ -15,7 +15,7 @@ def request_data_by_country(country_name, from_date="2020-01-01T00:00:00Z", case
         cases(Optional) - List of Strings containing type of update "confirmed","deaths" or "recovery".
     OUTPUT:
         json_list - String of response in Json  format.
-        country_request_err - List of String with Slugs that did not reach an API response or returned an error.
+        country_request_reprocess - List of String with Slugs that did not reach an API response or returned an error.
 
     Author: Gutelvam Rodrigues
     '''
@@ -39,7 +39,7 @@ def request_data_by_country(country_name, from_date="2020-01-01T00:00:00Z", case
                     if counter == 5:
                         break
 
-                if len(response) > 0:
+                if len(response.json()) > 0:
                     json_list.append(response.json())
                 else:
                     country_request_reprocess.append(name)

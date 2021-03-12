@@ -38,7 +38,7 @@ def request_data_by_country(country_name, from_date="2020-01-01T00:00:00Z", case
                     if counter == 5:
                         break
 
-                if len(response) > 0:
+                if len(response.json()) > 0:
                     json_list.append(response.json())
                 else:
                     country_request_reprocess.append(name)

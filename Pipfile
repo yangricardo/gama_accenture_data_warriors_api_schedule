@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 pandas = "*"
 requests = "*"
 schedule = "*"
+ipykernel = "*"
 
 [dev-packages]
 autopep8 = "*"

@@ -1,16 +1,24 @@
 # Gama Accenture 2021 - Api de Captura dos dados da Covid
 
-## Documentação
-
-### Processo de Desenvolvimento
+## Processo de Desenvolvimento
 
 ![Processo de Desenvolvimento](docs/DataWarriors-Processo%20de%20Desenvolvimento.png)
 
-### Diagrama de Entidade e Relacionamento
+> [Scripts](scripts/ENUNCIADO.md)
+> Parte 1
+>
+> - [1. Tratamento e Carga Inicial](scripts/part_1/01_initial_upload.ipynb)
+> - [2. Menu](scripts/part_1/02_menu.ipynb)
+> Parte 2
+> - [1. Ingestão de Dados no Databricks](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
+> - [2. Transformação e Desnormalização](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
+
+## Diagrama de Entidade e Relacionamento
 
 ![Diagrama de Entidade e Relacionamento](docs/DataWarriors-MER.png)
+> [SQL](scripts/part_1/01_sql_schemas.sql)
 
-### Arquitetura de Solução
+## Arquitetura de Solução
 
 ![Arquitetura de Solução](docs/DataWarriors-Arquitetura.png)
 

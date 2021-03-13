@@ -5,11 +5,16 @@
 Armazenamento de dados d COVID-19 de todos os países do mundo através da API: <https://documenter.getpostman.com/view/10808728/SzS8rjbc>.
 
 1. Crie um Script SQL para criação de um DataBase com um Schema para armazenar os registros de países e os dados de COVID-19 por todo o mundo. Na tabela que será armazenada os dados de países, 2 campos são obrigatórios de serem consistidos:
-Nome do país
-Código ISO2
-Em outros repositórios devem ser armazenados a quantidade de casos confirmados e mortes de cada um dos países do mundo, desde o dia 01/01/2020.
-2. Crie um banco de dados relacional no provedor de nuvem Azure para armazenamento dos dados em questão, estabelecidos pelo script com o dito schema, criado na etapa anterior. O banco de dados pode ser SQL Server, MySQL, MariaDB, Postgres ou algum outro SQL.
+      - Nome do país
+      - Código ISO2
+  
+    Em outros repositórios devem ser armazenados a quantidade de casos confirmados e mortes de cada um dos países do mundo, desde o dia 01/01/2020.
 
+    > [solução](scripts/part_1/01_sql_schemas.sql)
+2. Crie um banco de dados relacional no provedor de nuvem Azure para armazenamento dos dados em questão, estabelecidos pelo script com o dito schema, criado na etapa anterior. O banco de dados pode ser SQL Server, MySQL, MariaDB, Postgres ou algum outro SQL.
+    >
+    > - Solução: `jdbc:postgresql://data-warriors-postgresql.postgres.database.azure.com:5432/postgres?user=DataWarriorsAdmin@data-warriors-postgresql&password=********&sslmode=require`
+    >
 3. Desenvolva um script Python que faça leitura da API determinada no enunciado inicial desta atividade para realizar o armazenamento de países e dos casos confirmados e de mortes da COVID-19. O armazenamento destas informações deverá ser em BD SQL, consistido no Azure através do schema definido na etapa 1 desta atividade.
 Após armazenamento dos valores no BD, este dito script Python deverá retornar as seguintes informações em tela, caso o usuário escolha:
    1. Panorama diário de quantidade de casos confirmados de COVID-19 dos 10 países do mundo com maiores números.
@@ -17,7 +22,12 @@ Após armazenamento dos valores no BD, este dito script Python deverá retornar 
    3. Total de mortes por COVID-19 dos 10 países do mundo com maiores números.
    4. Total de casos confirmados por COVID-19 dos 10 países do mundo com maiores números.
 A impressão das 4 informações citadas acima deverá acontecer em tela, através do prompt de comando de execução do programa.
-
+    >
+    > - [Solução notebook](part_1/02_menu.ipynb)
+    > - Solução extra:
+    >   - [Módulo](../../data_warriors_api_schedule/scenery.py)
+    >   - [Endpoint de API no heroku](https://api-data-warriors.herokuapp.com/)
+    >
 ## Parte 2: Projeto de Engenharia de dados
 
 Com base nos conhecimentos obtidos durante o módulo de Engenharia de Dados com o Apache Spark, é necessário elaborar um projeto de construção de um mini data lake utilizando a plataforma da Databricks para armazenamento, processamento e visualização dos dados.
@@ -71,8 +81,11 @@ Realizar transformações nos datasets acima, utilizando as APIs do PySpark, de 
 Observações:
 
 - utilize um notebook específico para realizar a transformação do dado, com textos e comentários explicativos;
+  > [Solução](parte_2/01_Databricks_Ingestion_db_raw.ipynb)
 
 - salve o dado em formato de arquivo e posteriormente, crie uma tabela a partir do dado salvo para facilitar as visualizações (temporária ou definitiva). Durante o processo de escrita dos arquivos, perceba se o tipo de consulta exige um tipo de particionamento diferente e aplique se for o caso
+
+ > [Solução](parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
 
 - atente-se a modularização do código, pensando que podem ser realizadas esse tipo de transformação em centenas de tabelas no futuro
 
@@ -85,6 +98,8 @@ Observações:
 - utilize um notebook específico para realizar as consultas para exibição do dado, com textos e comentários explicativos;
 
 - se possível utilize o recurso de dashboards
+
+> [Solução](parte_2/03_Databricks_ready_visualization.ipynb)
 
 Apresentação
 

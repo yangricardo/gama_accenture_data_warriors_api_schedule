@@ -56,17 +56,19 @@ Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transfor
  Realizar a ingestão dos datasets da parte anterior (parte 1) que estão no banco SQL na Azure em um diretório de arquivos raw dentro do DBFS.
 
   > [Databricks Notebook](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
+  > [Link para importação no Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1025248272368135/98395105832869/3134047155639060/latest.html)
 
 * ***Transformações***
 
  Realizar transformações nos datasets acima, utilizando as APIs do PySpark, de modo a converter o dado ingestado previamente no formato mais otimizado para Big Data, o formato parquet, particionando-o fisicamente quando necessário. Salvar os dados em um diretório de arquivos ready dentro do DBFS.
  > [Databricks Notebook](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
+ > [Link para importação no Databricks](https://community.cloud.databricks.com/?o=1025248272368135#notebook/904836608181079/command/904836608181086)
 
 * ***Visualizações***
 
  Criar as visualizações que permitam ter bons insights e acompanhamentos em relação a pandemia do COVID-19.
   > [Notebook Databricks](scripts/parte_2/03_Databricks_ready_visualization.ipynb)
-  >
+  > [Link para importação no Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1025248272368135/98395105832884/3134047155639060/latest.html)
   > Extras:
   >
   > * [Dashboard Power BI conectado a base PostgreSQL](powerbi-dashboards/Projeto_Accenture_01.pbix)

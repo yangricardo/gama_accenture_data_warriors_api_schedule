@@ -51,6 +51,7 @@ Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transfor
 ### Organização do data lake no DBFS
 
 * A organização do data lake, ou estrutura de diretórios para o armazenamento dos dados, proposto para o projeto deve foi definida seguindo o padrão abaixo:
+
 ![data-lake-tree](https://i.ibb.co/BsRRymP/img-tree.jpg)
 
 

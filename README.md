@@ -1,5 +1,7 @@
 # Gama Accenture 2021 - Api de Captura dos dados da Covid
 
+#Murilo Vinicius Corrêa Trassi linkedin: https://www.linkedin.com/in/murilo-trassi-144146b8
+
 ## Overview
 
 Esse Projeto faz parte do treinamento de Engenheiro de dados ministrado pela Accenture em parceria com a Gamma Academy.

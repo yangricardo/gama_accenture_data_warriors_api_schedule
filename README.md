@@ -1,15 +1,19 @@
 # Gama Accenture 2021 - Api de Captura dos dados da Covid
 
+> [Enunciado](scripts/ENUNCIADO.md)
+
 ## Processo de Desenvolvimento
 
 ![Processo de Desenvolvimento](docs/DataWarriors-Processo%20de%20Desenvolvimento.png)
 
-> [Scripts](scripts/ENUNCIADO.md)
 > Parte 1
 >
 > - [1. Tratamento e Carga Inicial](scripts/part_1/01_initial_upload.ipynb)
 > - [2. Menu](scripts/part_1/02_menu.ipynb)
+> - [3. Extra - Automação das requisições com FastAPI e Thread de Captura de Dados](clean_summary_dataFrame.py)
+
 > Parte 2
+>
 > - [1. Ingestão de Dados no Databricks](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
 > - [2. Transformação e Desnormalização](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
 

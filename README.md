@@ -9,7 +9,7 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 ## Integrantes
 
 - Yang Ricardo Barcellos Miranda: [LinkedIn](https://www.linkedin.com/in/yangricardo/)
-- Gutelvan Rodrigues: [LinkedIn]()
+- Gutelvan Rodrigues: [LinkedIn](https://www.linkedin.com/in/gutelvam/)
 - Carlos Lima Diaz: [LinkedIn](https://www.linkedin.com/in/carlos-lima-dias)
 - Alisson Machado: [LinkedIn](https://www.linkedin.com/in/alisson-machado-sousa/)
 - Gabriel Rangel: [LinkedIn](https://www.linkedin.com/in/gabriel-rangel-8bb275108/)

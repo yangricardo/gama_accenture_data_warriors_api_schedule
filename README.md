@@ -1,12 +1,28 @@
 # Gama Accenture 2021 - Api de Captura dos dados da Covid
 
-## Requisitos
+## Documentação
+
+### Processo de Desenvolvimento
+
+![Processo de Desenvolvimento](docs/DataWarriors-Processo%20de%20Desenvolvimento.png)
+
+### Diagrama de Entidade e Relacionamento
+
+![Diagrama de Entidade e Relacionamento](docs/DataWarriors-MER.png)
+
+### Arquitetura de Solução
+
+![Arquitetura de Solução](docs/DataWarriors-Arquitetura.png)
+
+## API
+
+### Requisitos
 
 - Python 3.7.10
 
-## Comandos
+### Comandos
 
-### Ambiente
+#### Ambiente
 
 - `asdf install python 3.7.10`: instala versão mais estável do python para as dependências do projeto
   > necessário instalar o `asdf`, ferramenta que ajuda a ter várias versões de linguagens e outras ferramentas no ambiente e alternar
@@ -25,6 +41,6 @@
 - `pipenv install requests`: Dependência para execução de requisições http
 - `pipenv install schedule`: Dependência para execução de jobs escalonados
 
-### Lançamento da API
+#### Lançamento da API
   
 - `uvicorn main:app --reload`: executa servidor de API

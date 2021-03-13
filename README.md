@@ -18,31 +18,19 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 - Rômulo Vieira: [Linkedin](https://www.linkedin.com/in/r%C3%B4mulo-vieira-67b7182a/)
 
 ## Indice
-1. [Fases do Projeto](#fases)
-
-  1.1. [Parte 1: Projeto SQL, Python e Azure](#parte1) 
-
-    1.1.1. [Dados capturados para ingestão inicial](#ingestao)
-
-    1.1.2. [Menu - Cliente de dados consolidados](#menu)
-
-  1.2. [Parte 2: Projeto de Engenharia de dados](#parte2)
-
-    1.2.1. [Ingestão](#ingestao-databrics)
-
-    1.2.2. [Transformações e Desnormalizações](#transfomacoes-databrics)
-
-    1.2.3. [Visualizações](#visualizacoes)
-
-    1.2.4. [Organização do data lake no DBFS](#dbfs)
-
-2. [Arquitetura de Solução](#arquitetura)
-
-  2.1. [API de Captura de Dados Automatizada](#api)
-
-3. [Problema encontrados](#problemas)
-
-4. [Melhoras futuras](#melhoras)
+  - [Fases do Projeto](#fases)
+    - [Parte 1: Projeto SQL, Python e Azure](#parte1) 
+      - [Dados capturados para ingestão inicial](#ingestao)
+      - [Menu - Cliente de dados consolidados](#menu)
+    - [Parte 2: Projeto de Engenharia de dados](#parte2)
+      - [Ingestão](#ingestao-databrics)
+      - [Transformações e Desnormalizações](#transfomacoes-databrics)
+      - [Visualizações](#visualizacoes)
+      - [Organização do data lake no DBFS](#dbfs)
+  - [Arquitetura de Solução](#arquitetura)
+    - [API de Captura de Dados Automatizada](#api)
+  - [Problema encontrados](#problemas)
+  - [Melhoras futuras](#melhoras)
 
 ## Fases do projeto <a name="fases"></a>
 

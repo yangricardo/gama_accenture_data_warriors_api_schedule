@@ -19,17 +19,29 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 
 ## Indice
 1. [Fases do Projeto](#fases)
+
 1.1. [Parte 1: Projeto SQL, Python e Azure](#parte1) 
+
 1.1.1. [Dados capturados para ingestão inicial](#ingestao)
+
 1.1.2. [Menu - Cliente de dados consolidados](#menu)
+
 1.2. [Parte 2: Projeto de Engenharia de dados](#parte2)
+
 1.2.1. [Ingestão](#ingestao-databrics)
+
 1.2.2. [Transformações e Desnormalizações](#transfomacoes-databrics)
+
 1.2.3. [Visualizações](#visualizacoes)
+
 1.2.4. [Organização do data lake no DBFS](#dbfs)
+
 2. [Arquitetura de Solução](#arquitetura)
+
 2.1. [API de Captura de Dados Automatizada](#api)
+
 3. [Problema encontrados](#problemas)
+
 4. [Melhoras futuras](#melhoras)
 
 ## Fases do projeto <a name="fases"></a>
@@ -82,22 +94,26 @@ Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transfor
 
  Realizar a ingestão dos datasets da parte anterior (parte 1) que estão no banco SQL na Azure em um diretório de arquivos raw dentro do DBFS.
 
-  > [Databricks Notebook](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
+  > - [IPython Notebook](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
+  > - [Databricks Notebook](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1025248272368135/98395105832869/3134047155639060/latest.html)
 
 #### Transformações e Desnormalizações <a name="transfomacoes-databrics"></a>
 
  Realizar transformações nos datasets acima, utilizando as APIs do PySpark, de modo a converter o dado ingestado previamente no formato mais otimizado para Big Data, o formato parquet, particionando-o fisicamente quando necessário. Salvar os dados em um diretório de arquivos ready dentro do DBFS.
- > [Databricks Notebook](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
+  > - [IPython Notebook](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
+  > - [Databricks Notebook](https://community.cloud.databricks.com/?o=1025248272368135#notebook/904836608181079/command/904836608181080)
 
 #### Visualizações <a name="visualizacoes"></a>
 
  Criar as visualizações que permitam ter bons insights e acompanhamentos em relação a pandemia do COVID-19.
-  > [Notebook Databricks](scripts/parte_2/03_Databricks_ready_visualization.ipynb)
-  >
+  > - [IPython Databricks](scripts/parte_2/03_Databricks_ready_visualization.ipynb)
+  > - [Databricks Notebook](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1025248272368135/98395105832884/3134047155639060/latest.html)
+  > 
   > Extras:
   >
   > - [Dashboard Power BI conectado a base PostgreSQL](powerbi-dashboards/Projeto_Accenture_01.pbix)
   > - [Dashboard Power BI conectado ao Databricks](powerbi-dashboards/Projeto_Accenture_01%20-%20Databricks.pbix)
+  > - [PDF de Visualizações no Power BI - 2021-03-13](https://github.com/yangricardo/gama_accenture_data_warriors_api_schedule/blob/main/docs/Projeto_Accenture_01%20-%20Databricks.pdf)
 
 #### Organização do data lake no DBFS <a name="dbfs"></a>
 

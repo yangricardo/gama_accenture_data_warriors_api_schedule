@@ -54,6 +54,8 @@ Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transfor
 ![data-lake-tree](https://i.ibb.co/BsRRymP/img-tree.jpg)
 
 
+
+
 # Indicie
 
 1. [Requisitos do Projeto](#requiriments)

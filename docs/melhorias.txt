@@ -1,0 +1,25 @@
+
+Dificuldades
+
+1. Dificuldade de coleta dos dados EUA;
+
+2. Limitação da quantidade de requisições da API em curto período de tempo x Alta granularidade;
+
+3. Limitação de visualização de 1000 linhas na feature do display do Databricks;
+
+
+Melhorias
+
+
+1. Combinação da API disponibilizada com outras APIs externas para maior confiabilidade de dados e robustez.
+
+2. Realizar modelos forecast com dados;
+
+
+
+
+
+
+- 
+
+	-

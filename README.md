@@ -17,11 +17,29 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 - André Ariel: [LinkedIn](https://www.linkedin.com/in/andre-ariel-84070369)
 - Rômulo Vieira: [Linkedin](https://www.linkedin.com/in/r%C3%B4mulo-vieira-67b7182a/)
 
-Fases do projeto:
+## Indice
+1. [Fases do Projeto](#fases)
+1.1. [Parte 1: Projeto SQL, Python e Azure](#parte1) 
+1.1.1. [Dados capturados para ingestão inicial](#ingestao)
+1.1.2. [Menu - Cliente de dados consolidados](#menu)
+1.2. [Parte 2: Projeto de Engenharia de dados](#parte2)
+1.2.1. [Ingestão](#ingestao-databrics)
+1.2.2. [Transformações e Desnormalizações](#transfomacoes-databrics)
+1.2.3. [Visualizações](#visualizacoes)
+1.2.4. [Organização do data lake no DBFS](#dbfs)
+2. [Arquitetura de Solução](#arquitetura)
+2.1. [API de Captura de Dados Automatizada](#api)
+3. [Problema encontrados](#problemas)
+4. [Melhoras futuras](#melhoras)
 
-***Parte 1: Projeto SQL, Python e Azure***
+## Fases do projeto <a name="fases"></a>
+
+![Processo de Desenvolvimento](docs/DataWarriors-Processo%20de%20Desenvolvimento.png)
+
+### Parte 1: Projeto SQL, Python e Azure <a name="parte1"></a>
 
 - Criação de um Script SQL para criação de um DataBase com um Schema para armazenar os registros de países e os dados de COVID-19 por todo o mundo. Na tabela que será armazenada os dados de países, 2 campos são obrigatórios de serem consistidos: Nome do País e Código ISO2. Em outros repositórios devem ser armazenados a quantidade de casos confirmados e mortes de cada um dos países do mundo, desde o dia 01/01/2020.
+  > ![Diagrama de Entidade e Relacionamento](docs/DataWarriors-MER.png)
   > [Script SQL](scripts/part_1/01_sql_schemas.sql)
 - Criação de um banco de dados relacional no provedor de nuvem Azure para armazenamento dos dados em questão, estabelecidos pelo script com o dito schema, criado na etapa anterior. O banco de dados pode ser SQL Server, MySQL, MariaDB, Postgres ou algum outro SQL.
   >
@@ -33,82 +51,8 @@ Fases do projeto:
     3) Total de mortes por COVID-19 dos 10 países do mundo com maiores números.
     4) Total de casos confirmados por COVID-19 dos 10 países do mundo com maiores números.
 A impressão das 4 informações citadas acima deverá acontecer em tela, através do prompt de comando de execução do programa.
-  > [Notebook de Captura e Armazenamento de dados na base SQL](scripts/part_1/01_initial_upload.ipynb)
-  >
-  > - Menu
-  >   - [Notebook](part_1/02_menu.ipynb)
-  > - Solução extra:
-  >   - [Módulo](scenery.py)
-  >   - [Endpoint de API no heroku](https://api-data-warriors.herokuapp.com/)
-  >
-***Parte 2: Projeto de Engenharia de dados***
 
-Com base nos conhecimentos obtidos durante o módulo de Engenharia de Dados com o Apache Spark, foi necessário elaborar um projeto de construção de um mini data lake utilizando a plataforma da Databricks para armazenamento, processamento e visualização dos dados.
-Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transformação de dados com as seguintes etapas:
-
-- ***Ingestão***
-
- Realizar a ingestão dos datasets da parte anterior (parte 1) que estão no banco SQL na Azure em um diretório de arquivos raw dentro do DBFS.
-
-  > [Databricks Notebook](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
-
-- ***Transformações***
-
- Realizar transformações nos datasets acima, utilizando as APIs do PySpark, de modo a converter o dado ingestado previamente no formato mais otimizado para Big Data, o formato parquet, particionando-o fisicamente quando necessário. Salvar os dados em um diretório de arquivos ready dentro do DBFS.
- > [Databricks Notebook](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
-
-- ***Visualizações***
-
- Criar as visualizações que permitam ter bons insights e acompanhamentos em relação a pandemia do COVID-19.
-  > [Notebook Databricks](scripts/parte_2/03_Databricks_ready_visualization.ipynb)
-  >
-  > Extras:
-  >
-  > - [Dashboard Power BI conectado a base PostgreSQL](powerbi-dashboards/Projeto_Accenture_01.pbix)
-  > - [Dashboard Power BI conectado ao Databricks](powerbi-dashboards/Projeto_Accenture_01%20-%20Databricks.pbix)
-
-### Organização do data lake no DBFS
-
-- A organização do data lake, ou estrutura de diretórios para o armazenamento dos dados, proposto para o projeto deve foi definida seguindo o padrão abaixo:
-
-![data-lake-tree](https://i.ibb.co/BsRRymP/img-tree.jpg)
-
-## Indice
-
-1. [Processo de Desenvolvimento](#processo)
-2. [Diagrama de Entidade e Relacionamento](#diagrama)
-3. [Arquitetura de Solução](#arquitetura)
-4. [Ingestão Inicial](#ingestao)
-5. [API de Captura de Dados Automatizada](#api)
-6. [Problema encontrados](#problemas)
-7. [Melhoras futuras](#melhoras)
-8. [Licensing and Acknowledgements](#Licensing)
-
-## Processo de Desenvolvimento <a name="processo"></a>
-
-![Processo de Desenvolvimento](docs/DataWarriors-Processo%20de%20Desenvolvimento.png)
-
-> Parte 1
->
-> - [1. Tratamento e Carga Inicial](scripts/part_1/01_initial_upload.ipynb)
-> - [2. Menu](scripts/part_1/02_menu.ipynb)
-> - [3. Extra - Automação das requisições com FastAPI e Thread de Captura de Dados](clean_summary_dataFrame.py)
-
-> Parte 2
->
-> - [1. Ingestão de Dados no Databricks](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
-> - [2. Transformação e Desnormalização](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
-
-## Diagrama de Entidade e Relacionamento <a name="diagrama"></a>
-
-![Diagrama de Entidade e Relacionamento](docs/DataWarriors-MER.png)
-> [SQL](scripts/part_1/01_sql_schemas.sql)
-
-## Arquitetura de Solução <a name="arquitetura"></a>
-
-![Arquitetura de Solução](docs/DataWarriors-Arquitetura.png)
-
-## Dados capturados para ingestão inicial <a name="ingestao"></a>
+#### Dados capturados para ingestão inicial <a name="ingestao"></a>
 
 A API traz dados de diversas formas do COVID-19, as funcionalidades escolhidas para ser utilizada no projeto, foram 3:
 
@@ -123,10 +67,51 @@ A API traz dados de diversas formas do COVID-19, as funcionalidades escolhidas p
 - By Country:
 
     ![ByCountryGet](https://i.ibb.co/wWQKhBD/byday.jpg)
+  > [Notebook de Captura e Armazenamento inicial de dados na base SQL](scripts/part_1/01_initial_upload.ipynb)
+#### Menu - Cliente de dados consolidados <a name="menu"></a>
+  >   - [Notebook](part_1/02_menu.ipynb)
+  > - Solução extra:
+  >   - [Módulo de API](scenery.py)
+  >   - [Endpoint de API no heroku](https://api-data-warriors.herokuapp.com/)
+### Parte 2: Projeto de Engenharia de dados <a name="parte2"></a>
 
-## API de Captura de Dados Automatizada <a name="api"></a>
+Com base nos conhecimentos obtidos durante o módulo de Engenharia de Dados com o Apache Spark, foi necessário elaborar um projeto de construção de um mini data lake utilizando a plataforma da Databricks para armazenamento, processamento e visualização dos dados.
+Assim sendo, foi requisitado a capacidade de desenvolver um pipeline de transformação de dados com as seguintes etapas:
 
-### Dependências
+#### Ingestão <a name="ingestao-databrics"></a>
+
+ Realizar a ingestão dos datasets da parte anterior (parte 1) que estão no banco SQL na Azure em um diretório de arquivos raw dentro do DBFS.
+
+  > [Databricks Notebook](scripts/parte_2/01_Databricks_Ingestion_db_raw.ipynb)
+
+#### Transformações e Desnormalizações <a name="transfomacoes-databrics"></a>
+
+ Realizar transformações nos datasets acima, utilizando as APIs do PySpark, de modo a converter o dado ingestado previamente no formato mais otimizado para Big Data, o formato parquet, particionando-o fisicamente quando necessário. Salvar os dados em um diretório de arquivos ready dentro do DBFS.
+ > [Databricks Notebook](scripts/parte_2/02_Databricks_TransformationDesnormalization_raw_ready.ipynb)
+
+#### Visualizações <a name="visualizacoes"></a>
+
+ Criar as visualizações que permitam ter bons insights e acompanhamentos em relação a pandemia do COVID-19.
+  > [Notebook Databricks](scripts/parte_2/03_Databricks_ready_visualization.ipynb)
+  >
+  > Extras:
+  >
+  > - [Dashboard Power BI conectado a base PostgreSQL](powerbi-dashboards/Projeto_Accenture_01.pbix)
+  > - [Dashboard Power BI conectado ao Databricks](powerbi-dashboards/Projeto_Accenture_01%20-%20Databricks.pbix)
+
+#### Organização do data lake no DBFS <a name="dbfs"></a>
+
+- A organização do data lake, ou estrutura de diretórios para o armazenamento dos dados, proposto para o projeto deve foi definida seguindo o padrão abaixo:
+
+![data-lake-tree](https://i.ibb.co/BsRRymP/img-tree.jpg)
+
+## Arquitetura de Solução <a name="arquitetura"></a>
+
+![Arquitetura de Solução](docs/DataWarriors-Arquitetura.png)
+
+### API de Captura de Dados Automatizada <a name="api"></a>
+
+#### Dependências
 
 - `asdf install python 3.7.10`: instala versão mais estável do python para as dependências do projeto
   > necessário instalar o `asdf`, ferramenta que ajuda a ter várias versões de linguagens e outras ferramentas no ambiente e alternar
@@ -142,7 +127,7 @@ A API traz dados de diversas formas do COVID-19, as funcionalidades escolhidas p
 - `pipenv install requests`: Dependência para execução de requisições http
 - `pipenv install schedule`: Dependência para execução de jobs escalonados
 
-### Lançamento da API
+#### Lançamento da API
   
 - `uvicorn main:app --reload`: executa servidor de API
 
@@ -173,3 +158,4 @@ A API traz dados de diversas formas do COVID-19, as funcionalidades escolhidas p
 1. Combinação da API disponibilizada com outras APIs externas para maior confiabilidade de dados e robustez.
 
 2. Realizar modelos forecast com dados.
+

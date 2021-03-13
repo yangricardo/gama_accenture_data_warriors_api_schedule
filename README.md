@@ -10,12 +10,15 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 A API traz dados de diversas formas do COVID-19, as funcionalidades escolhidas para ser utilizada no projeto, foram 3:
 
 * Summary:
+
     ![SummaryGet](https://i.ibb.co/10rk7Wg/summary.jpg)
 
 * Country:
+
     ![CountryGet](https://i.ibb.co/F0qjL1W/country.jpg)
 
 * By Country:
+
     ![ByCountryGet](https://i.ibb.co/wWQKhBD/byday.jpg)
 
 Fases do projeto:

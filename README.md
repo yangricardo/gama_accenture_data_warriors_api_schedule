@@ -12,7 +12,7 @@ Neste projeto foi dado a oportunidade de aplicar as tecnologias abordados no cur
 - Gutelvan Rodrigues: [LinkedIn](https://www.linkedin.com/in/gutelvam/)
 - Carlos Lima Diaz: [LinkedIn](https://www.linkedin.com/in/carlos-lima-dias)
 - Alisson Machado: [LinkedIn](https://www.linkedin.com/in/alisson-machado-sousa/)
-- Gabriel Rangel: [LinkedIn](https://www.linkedin.com/in/gabriel-rangel-8bb275108/)
+- Gabriel Rangel: [LinkedIn]()
 - Murilo Vinicius Corrêa Trassi: [LinkedIn](https://www.linkedin.com/in/murilo-trassi-144146b8)
 - André Ariel: [LinkedIn](https://www.linkedin.com/in/andre-ariel-84070369)
 - Rômulo Vieira: [Linkedin](https://www.linkedin.com/in/r%C3%B4mulo-vieira-67b7182a/)
